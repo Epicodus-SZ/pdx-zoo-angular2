@@ -18,7 +18,7 @@ export class FilterAnimalsPipe implements PipeTransform {
       return output;
     } else if (filter === "young") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].age <= 2) {
+        if (input[i].age < 2) {
           output.push(input[i]);
         }
       }

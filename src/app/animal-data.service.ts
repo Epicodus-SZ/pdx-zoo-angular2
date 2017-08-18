@@ -38,9 +38,31 @@ export class AnimalDataService {
       sex: "Female",
       likes: "Delicate roots and leaves",
       dislikes: "Loud Noises"});
+    let animal4 = new Animal({
+      species: "American Shorthair",
+      name: "Ranger",
+      age: 1,
+      diet: "Anything",
+      location: "Wallingford",
+      caretakers: 4,
+      sex: "Male",
+      likes: "licking his sister",
+      dislikes: "none"});
+    let animal5 = new Animal({
+      species: "American Shorthair",
+      name: "Dallas",
+      age: 1,
+      diet: "cat food",
+      location: "Wallingford",
+      caretakers: 4,
+      sex: "Female",
+      likes: "laser pointers",
+      dislikes: "the shopvac"});
     this.addAnimal(animal1);
     this.addAnimal(animal2);
     this.addAnimal(animal3);
+    this.addAnimal(animal4);
+    this.addAnimal(animal5);
    }
 
   //Post method
