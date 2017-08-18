@@ -11,16 +11,13 @@ import { AnimalDataService } from './animal-data.service';
 export class AppComponent {
   title = 'app';
 
+  viewMode: string = "new";
+
   newAnimal: Animal = new Animal();
   animalToEdit: Animal = null;
 
   constructor(private animalDataService: AnimalDataService){
   }
-
-  // addAnimal() {
-  //   this.animalDataService.addAnimal(this.newAnimal);
-  //   this.newAnimal = new Animal();
-  // }
 
   onAddAnimal(animal: Animal) {
     this.animalDataService.addAnimal(animal);
@@ -30,15 +27,14 @@ export class AppComponent {
     this.animalDataService.deleteAnimalById(animal.id);
   }
 
-updateAnimal(animal) {
-  // this.animalDataService.updateAnimalById(animal.id,this.animalToEdit);
-  this.animalToEdit = null;
-}
+  updateAnimal(animal) {
+    // this.animalDataService.updateAnimalById(animal.id,this.animalToEdit);
+    this.viewMode = "new";
+    this.animalToEdit = null;
+  }
 
   editAnimal(animal) {
-    // this.animalDataService.deleteAnimalById(animal.id);
-    // alert("edit the animal");
-    //debugger;
+    this.viewMode = "edit";
     this.animalToEdit = animal;
   }
 

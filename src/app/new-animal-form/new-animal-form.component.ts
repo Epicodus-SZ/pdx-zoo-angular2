@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from '../animal';
 
 @Component({
@@ -9,6 +9,9 @@ import { Animal } from '../animal';
 export class NewAnimalFormComponent implements OnInit {
 
   newAnimal: Animal = new Animal();
+  mode: string = "new";
+  @Input() viewMode: string;
+
   @Output()
   add: EventEmitter<Animal> = new EventEmitter();
 

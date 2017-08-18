@@ -8,6 +8,8 @@ import { Animal } from '../animal';
 })
 export class AnimalListComponent implements OnInit {
 
+  listFilter: string = "";
+
   @Input()
   animals: Animal[];
 
@@ -28,6 +30,9 @@ export class AnimalListComponent implements OnInit {
       this.editAnimal.emit(animal);
     }
 
+  onChange(optionFromMenu) {
+    this.listFilter = optionFromMenu;
+  }
   ngOnInit() {
   }
 

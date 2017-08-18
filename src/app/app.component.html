@@ -1,5 +1,5 @@
 <section class="animalapp">
-<app-new-animal-form (add)="onAddAnimal($event)"></app-new-animal-form>
+<app-new-animal-form [viewMode]="viewMode" (add)="onAddAnimal($event)"></app-new-animal-form>
 <app-edit-animal-form [animalToEdit]="animalToEdit" (updateAnimal)="updateAnimal($event)"></app-edit-animal-form>
 <app-animal-list [animals]="animals" (editAnimal)="editAnimal($event)" (removeAnimal)="removeAnimal($event)"></app-animal-list>
   <footer class="footer">

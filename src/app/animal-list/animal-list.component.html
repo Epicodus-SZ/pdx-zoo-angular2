@@ -13,7 +13,7 @@
         <div class="divTableCell">Likes</div>
         <div class="divTableCell">Dislikes</div>
       </div>
-      <div class="divTableRow" *ngFor="let animal of animals">
+      <div class="divTableRow" *ngFor="let animal of animals | filterAnimals:listFilter">
         <div class="divTableCell">{{animal.id}}</div>
         <div class="divTableCell">{{animal.name}}</div>
         <div class="divTableCell">{{animal.species}}</div>
@@ -28,4 +28,12 @@
       </div>
     </div>
   </div>
+  <section id="filterControl">
+    Filter by AGE:
+    <select (change)="onChange($event.target.value)">
+      <option value="all" selected="selected">All Animals</option>
+      <option value="old">Old Animals</option>
+      <option value="young">Young Animals</option>
+    </select>
+  </section>
 </section>
