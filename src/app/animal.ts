@@ -1,4 +1,5 @@
 export class Animal {
+  id: number;
   species: string;
   name: string;
   age: number;
