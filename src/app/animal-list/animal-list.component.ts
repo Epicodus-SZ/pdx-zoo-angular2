@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Animal } from '../animal';
 
 @Component({
@@ -11,7 +11,22 @@ export class AnimalListComponent implements OnInit {
   @Input()
   animals: Animal[];
 
-  constructor() { }
+  @Output()
+    removeAnimal: EventEmitter<Animal> = new EventEmitter();
+
+    @Output()
+    editAnimal: EventEmitter<Animal> = new EventEmitter();
+
+    constructor() {
+    }
+
+    onRemoveAnimal(animal: Animal) {
+      this.removeAnimal.emit(animal);
+    }
+
+    onEditAnimal(animal: Animal) {
+      this.editAnimal.emit(animal);
+    }
 
   ngOnInit() {
   }
