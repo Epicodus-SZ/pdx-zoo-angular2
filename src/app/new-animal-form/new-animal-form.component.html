@@ -1,0 +1,106 @@
+<header class="header">
+  <form class="form-horizontal">
+  <fieldset>
+
+  <!-- Form Name -->
+  <legend>Animals</legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="name">Name</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.name" id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="species">Species</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.species" id="species" name="species" type="text" placeholder="species" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="age">Age</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.age" id="age" name="age" type="text" placeholder="Age" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="diet">Diet</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.diet" id="diet" name="diet" type="text" placeholder="Diet" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="location">Location</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.location" id="location" name="location" type="text" placeholder="location" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="caretakers"># of Cartakers</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.caretakers" id="caretakers" name="caretakers" type="text" placeholder="# of caretakers required" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Multiple Radios (inline) -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="sex-radio">Sex</label>
+    <div class="col-md-4">
+      <label class="radio-inline" for="sex-radio-0">
+        <input [(ngModel)]="newAnimal.sex" type="radio" name="sex-radio" id="sex-radio-0" value="male" checked="checked">
+        Male
+      </label>
+      <label class="radio-inline" for="sex-radio-1">
+        <input [(ngModel)]="newAnimal.sex" type="radio" name="sex-radio" id="sex-radio-1" value="female">
+        Female
+      </label>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="likes">Likes</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.likes" id="likes" name="likes" type="text" placeholder="likes" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="dislikes">Dislikes</label>
+    <div class="col-md-4">
+    <input [(ngModel)]="newAnimal.dislikes" id="dislikes" name="dislikes" type="text" placeholder="dislikes" class="form-control input-md">
+
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="addAnimal"></label>
+    <div class="col-md-4">
+      <button (click)="addAnimal()" id="addAnimal" name="addAnimal" class="btn btn-primary">Add Animal</button>
+    </div>
+  </div>
+
+  </fieldset>
+  </form>
+
+</header>

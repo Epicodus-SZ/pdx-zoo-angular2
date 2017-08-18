@@ -16,9 +16,13 @@ export class AppComponent {
   constructor(private animalDataService: AnimalDataService){
   }
 
-  addAnimal() {
-    this.animalDataService.addAnimal(this.newAnimal);
-    this.newAnimal = new Animal();
+  // addAnimal() {
+  //   this.animalDataService.addAnimal(this.newAnimal);
+  //   this.newAnimal = new Animal();
+  // }
+
+  onAddAnimal(animal: Animal) {
+    this.animalDataService.addAnimal(animal);
   }
 
   removeAnimal(animal) {

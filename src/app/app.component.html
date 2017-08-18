@@ -1,13 +1,10 @@
 <section class="animalapp">
-  <header class="header">
-    <h1>Animals</h1>
-    <input class="new-animal" placeholder="What new animal?" autofocus="" [(ngModel)]="newAnimal.name" (keyup.enter)="addAnimal()">
-  </header>
+<app-new-animal-form (add)="onAddAnimal($event)"></app-new-animal-form>
   <section class="main" *ngIf="animals.length > 0">
     <ul class="animal-list">
       <li *ngFor="let animal of animals">
         <div class="view">
-          <label>{{animal.name}}</label>
+          <label>{{animal.name}}, {{animal.sex}}, {{animal.species}}</label>
           <button class="destroy" (click)="removeAnimal(animal)"></button>
         </div>
       </li>
