@@ -1,0 +1,31 @@
+<section class="animalList" *ngIf="animals.length > 0">
+  <div class="divTable">
+    <div class="divTableBody">
+      <div class="divTableRow">
+        <div class="divTableCell">ID</div>
+        <div class="divTableCell">Name</div>
+        <div class="divTableCell">Species</div>
+        <div class="divTableCell">Age</div>
+        <div class="divTableCell">Diet</div>
+        <div class="divTableCell">Location</div>
+        <div class="divTableCell">Care #</div>
+        <div class="divTableCell">Sex</div>
+        <div class="divTableCell">Likes</div>
+        <div class="divTableCell">Dislikes</div>
+      </div>
+      <div class="divTableRow" *ngFor="let animal of animals">
+        <div class="divTableCell">{{animal.id}}</div>
+        <div class="divTableCell">{{animal.name}}</div>
+        <div class="divTableCell">{{animal.species}}</div>
+        <div class="divTableCell">{{animal.age}}</div>
+        <div class="divTableCell">{{animal.diet}}</div>
+        <div class="divTableCell">{{animal.location}}</div>
+        <div class="divTableCell">{{animal.caretakers}}</div>
+        <div class="divTableCell">{{animal.sex}}</div>
+        <div class="divTableCell">{{animal.likes}}</div>
+        <div class="divTableCell">{{animal.dislikes}}</div>
+        <div><button (click)="removeAnimal(animal)">Delete</button></div>
+      </div>
+    </div>
+  </div>
+</section>

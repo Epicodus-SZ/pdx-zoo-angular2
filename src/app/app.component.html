@@ -1,15 +1,6 @@
 <section class="animalapp">
 <app-new-animal-form (add)="onAddAnimal($event)"></app-new-animal-form>
-  <section class="main" *ngIf="animals.length > 0">
-    <ul class="animal-list">
-      <li *ngFor="let animal of animals">
-        <div class="view">
-          <label>{{animal.name}}, {{animal.sex}}, {{animal.species}}</label>
-          <button class="destroy" (click)="removeAnimal(animal)"></button>
-        </div>
-      </li>
-    </ul>
-  </section>
+<app-animal-list [animals]="animals"></app-animal-list>
   <footer class="footer" *ngIf="animals.length > 0">
     <span class="animal-count"><strong>{{animals.length}}</strong> {{animals.length == 1 ? 'item' : 'items'}} left</span>
   </footer>
