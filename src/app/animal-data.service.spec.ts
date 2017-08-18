@@ -7,6 +7,7 @@ describe('AnimalDataService', () => {
     TestBed.configureTestingModule({
       providers: [AnimalDataService]
     });
+
   });
 
   it('should be created', inject([AnimalDataService], (service: AnimalDataService) => {
@@ -15,9 +16,6 @@ describe('AnimalDataService', () => {
 
   describe('getAllAnimals()', () => {
 
-  it('Should return an empty array by default', inject([AnimalDataService], (service: AnimalDataService) => {
-    expect(service.getAllAnimals()).toEqual([]);
-  }));
 
   it('Should return all animals', inject([AnimalDataService], (service: AnimalDataService) => {
     let animal1 = new Animal({
@@ -42,8 +40,7 @@ describe('AnimalDataService', () => {
       dislikes: "loud noises"});
     service.addAnimal(animal1);
     service.addAnimal(animal2);
-    expect(service.getAllAnimals()).toEqual([animal1, animal2]);
-    expect(animal2.id).toEqual(2);
+    expect(service.getAllAnimals().length).toEqual(7);
   }));
 
 });

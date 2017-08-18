@@ -1,7 +1,7 @@
 # PdxZoo
 
 ## Description
-A Animal tracking website developed for the Portland Zoo.  Written in JavaScript
+An animal tracking website developed for the Portland Zoo.  Written in JavaScript,
 
 ## Installation
 
@@ -17,13 +17,21 @@ A Animal tracking website developed for the Portland Zoo.  Written in JavaScript
 * Angular/Cli (v1.3.1)
 * TypeScript (v2.3.4)
 
+
+## Future Features
+1. Fix list filters to trigger on edit and new animal events
+2. Improve CSS and general design (make it pretty).
+3. Get all Unit tests to pass.
+4. Move Database to Firebase.
+5. Get edit data-binding to work correctly for radio buttons.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 
 ## Support and contact details
-  
+
 Direct questions and comments to: [github@zaske.com](mailto:github@zaske.com)
 
 ### License
