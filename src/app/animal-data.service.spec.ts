@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { Animal } from './animal'
 import { AnimalDataService } from './animal-data.service';
 
-fdescribe('AnimalDataService', () => {
+describe('AnimalDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [AnimalDataService]
@@ -31,7 +31,6 @@ fdescribe('AnimalDataService', () => {
       let animal6 = new Animal({
         name: "Ironman"});
       service.addAnimal(animal6);
-      alert(animal6.id); //test
       expect(service.getAllAnimals()[5].name).toEqual("Ironman");
     }));
 
@@ -44,7 +43,7 @@ fdescribe('AnimalDataService', () => {
   });
 
   describe('deleteAnimalById()', () => {
-    it('Should delete animal with ID 6', inject([AnimalDataService], (service: AnimalDataService) => {
+    it('Should delete animal with id 6', inject([AnimalDataService], (service: AnimalDataService) => {
       let animal6 = new Animal({
         name: "Ironman"});
       service.addAnimal(animal6);  
@@ -54,35 +53,52 @@ fdescribe('AnimalDataService', () => {
     }));
   }); //end of deletebyID
 
-  // describe('updateAnimalById()', () => {
-  //   it('Should update animal with a new animal', inject([AnimalDataService], (service: AnimalDataService) => {
-  //     let newAnimal = new Animal({
-  //       species: "Ironman-species",
-  //       name: "Ironman",
-  //       age: 1,
-  //       diet: "Ironman-diet",
-  //       location: "Ironman-location",
-  //       caretakers: 4,
-  //       sex: "Male",
-  //       likes: "Ironman-like",
-  //       dislikes: "Ironman-dislike"});
-  //     let updatedAnimal = new Animal({
-  //       species: "Hulk-species",
-  //       name: "Hulk",
-  //       age: 1,
-  //       diet: "Hulk-diet",
-  //       location: "Hulk-location",
-  //       caretakers: 4,
-  //       sex: "Male",
-  //       likes: "Hulk-like",
-  //       dislikes: "Hulk-dislike"});
-  //     service.addAnimal(newAnimal);  
-  //     service.updateAnimalById(animal6.id); //line under test
-  //     expect(service.getAllAnimals()).not.toContain(animal6);
-  //     expect(service.getAllAnimals().length).toEqual(5);
-  //   }));
-  // }); //end of deletebyID
+  describe('updateAnimalById()', () => {
+    it('Should update animal with a new animal', inject([AnimalDataService], (service: AnimalDataService) => {
+      let newAnimal = new Animal({
+        species: "Ironman-species",
+        name: "Ironman",
+        age: 1,
+        diet: "Ironman-diet",
+        location: "Ironman-location",
+        caretakers: 4,
+        sex: "Male",
+        likes: "Ironman-like",
+        dislikes: "Ironman-dislike"});
+      let updatedAnimal = new Animal({
+        species: "Hulk-species",
+        name: "Hulk",
+        age: 1,
+        diet: "Hulk-diet",
+        location: "Hulk-location",
+        caretakers: 4,
+        sex: "Male",
+        likes: "Hulk-like",
+        dislikes: "Hulk-dislike"});
+      service.addAnimal(newAnimal);  
+      service.updateAnimalById(newAnimal.id,updatedAnimal); //code under test
+      let testedAnimal = service.getAnimalById(newAnimal.id);
+      expect(testedAnimal.name).toEqual(updatedAnimal.name);
+      expect(testedAnimal.species).toEqual(updatedAnimal.species);
+      expect(testedAnimal.diet).toEqual(updatedAnimal.diet);
+      expect(testedAnimal.location).toEqual(updatedAnimal.location);
+      expect(testedAnimal.id).toEqual(newAnimal.id);
+    }));
+  }); //end of updateAnimalById
 
+  describe('getAnimalById()', () => {
+    it('Should return animal when passed a valid id', inject([AnimalDataService], (service: AnimalDataService) => {
+      let newAnimal = new Animal({
+        name: "Ironman"});
+      service.addAnimal(newAnimal);
+
+      let testAnimal = service.getAnimalById(newAnimal.id); //line under test
+      expect(testAnimal.name).toEqual("Ironman");
+
+      //Should add ability to check for invalid id
+      
+    }));
+  }); //end of getAnimalById
   // Add more tests here
 
 

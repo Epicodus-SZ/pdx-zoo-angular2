@@ -1,9 +1,8 @@
 import { FilterAnimalsPipe } from './filter-animals.pipe';
 import { Animal } from './animal';
 
-fdescribe('FilterAnimalsPipe', () => {
+describe('FilterAnimalsPipe', () => {
   let pipe: FilterAnimalsPipe; 
-  // let animals: Animal[]; //a zoo 
   
   //Add some mock data
   let oneYear = new Animal({

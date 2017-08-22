@@ -14,21 +14,21 @@ export class AnimalListComponent implements OnInit {
   animals: Animal[];
 
   @Output()
-    removeAnimal: EventEmitter<Animal> = new EventEmitter();
+  removeAnimal: EventEmitter<Animal> = new EventEmitter();
 
-    @Output()
-    editAnimal: EventEmitter<Animal> = new EventEmitter();
+  @Output()
+  editAnimal: EventEmitter<Animal> = new EventEmitter();
 
-    constructor() {
-    }
+  constructor() {
+  }
 
-    onRemoveAnimal(animal: Animal) {
-      this.removeAnimal.emit(animal);
-    }
+  onRemoveAnimal(animal: Animal) {
+    this.removeAnimal.emit(animal);
+  }
 
-    onEditAnimal(animal: Animal) {
-      this.editAnimal.emit(animal);
-    }
+  onEditAnimal(animal: Animal) {
+    this.editAnimal.emit(animal);
+  }
 
   onChange(optionFromMenu) {
     this.listFilter = optionFromMenu;
