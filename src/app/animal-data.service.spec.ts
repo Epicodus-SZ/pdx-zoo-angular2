@@ -31,7 +31,7 @@ fdescribe('AnimalDataService', () => {
       let animal6 = new Animal({
         name: "Ironman"});
       service.addAnimal(animal6);
-      alert(animal6.id);
+      alert(animal6.id); //test
       expect(service.getAllAnimals()[5].name).toEqual("Ironman");
     }));
 
@@ -54,34 +54,34 @@ fdescribe('AnimalDataService', () => {
     }));
   }); //end of deletebyID
 
-  describe('updateAnimalById()', () => {
-    it('Should update animal with a new animal', inject([AnimalDataService], (service: AnimalDataService) => {
-      let newAnimal = new Animal({
-        species: "Ironman-species",
-        name: "Ironman",
-        age: 1,
-        diet: "Ironman-diet",
-        location: "Ironman-location",
-        caretakers: 4,
-        sex: "Male",
-        likes: "Ironman-like",
-        dislikes: "Ironman-dislike"});
-      let updatedAnimal = new Animal({
-        species: "Hulk-species",
-        name: "Hulk",
-        age: 1,
-        diet: "Hulk-diet",
-        location: "Hulk-location",
-        caretakers: 4,
-        sex: "Male",
-        likes: "Hulk-like",
-        dislikes: "Hulk-dislike"});
-      service.addAnimal(newAnimal);  
-      service.updateAnimalById(animal6.id); //line under test
-      expect(service.getAllAnimals()).not.toContain(animal6);
-      expect(service.getAllAnimals().length).toEqual(5);
-    }));
-  }); //end of deletebyID
+  // describe('updateAnimalById()', () => {
+  //   it('Should update animal with a new animal', inject([AnimalDataService], (service: AnimalDataService) => {
+  //     let newAnimal = new Animal({
+  //       species: "Ironman-species",
+  //       name: "Ironman",
+  //       age: 1,
+  //       diet: "Ironman-diet",
+  //       location: "Ironman-location",
+  //       caretakers: 4,
+  //       sex: "Male",
+  //       likes: "Ironman-like",
+  //       dislikes: "Ironman-dislike"});
+  //     let updatedAnimal = new Animal({
+  //       species: "Hulk-species",
+  //       name: "Hulk",
+  //       age: 1,
+  //       diet: "Hulk-diet",
+  //       location: "Hulk-location",
+  //       caretakers: 4,
+  //       sex: "Male",
+  //       likes: "Hulk-like",
+  //       dislikes: "Hulk-dislike"});
+  //     service.addAnimal(newAnimal);  
+  //     service.updateAnimalById(animal6.id); //line under test
+  //     expect(service.getAllAnimals()).not.toContain(animal6);
+  //     expect(service.getAllAnimals().length).toEqual(5);
+  //   }));
+  // }); //end of deletebyID
 
   // Add more tests here
 
